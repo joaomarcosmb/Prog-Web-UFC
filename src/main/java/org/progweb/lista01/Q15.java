@@ -1,35 +1,22 @@
 package org.progweb.lista01;
 
-import java.util.Scanner;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Q15 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+        ArrayList<Integer> fibonacci = new ArrayList<>(Arrays.asList(0, 1, 1));
         for (int i = 0; i < 10; i++) {
-            System.out.print("Digite um número inteiro: ");
-            int in = sc.nextInt();
-
-            if(isPrime(in)) {
-                System.out.println("Primo!");
+            if (i < 1) {
+                System.out.println(fibonacci.getFirst());
+            } else if (i < 3) {
+                System.out.println(fibonacci.get(1));
             } else {
-                System.out.println("Não primo!");
+                int num = fibonacci.get(i - 1) + fibonacci.get(i - 2);
+                System.out.println(num);
+                fibonacci.add(num);
             }
         }
-
-        sc.close();
-    }
-
-    public static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
-        }
-
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if(n % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }

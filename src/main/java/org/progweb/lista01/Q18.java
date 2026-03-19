@@ -13,7 +13,12 @@ public class Q18 {
             nums.add(sc.nextLine());
         }
 
-        System.out.println("Os números digitados foram " + String.join(", ", nums) + ".");
+        ArrayList<String> numsReversed = new ArrayList<>();
+        for (int i = nums.size() - 1; i >= 0; i--) {
+            numsReversed.add(nums.get(i));
+        }
+
+        System.out.println("Os números digitados foram " + String.join(", ", numsReversed) + ".");
 
         sc.close();
     }

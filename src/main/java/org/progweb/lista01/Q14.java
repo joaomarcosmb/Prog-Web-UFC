@@ -6,14 +6,30 @@ public class Q14 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite um número inteiro entre 0 e 10: ");
-        int in = sc.nextInt();
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite um número inteiro: ");
+            int in = sc.nextInt();
 
-        while (in < 0 || in > 10) {
-            System.out.print("Digite um número inteiro entre 0 e 10: ");
-            in = sc.nextInt();
+            if(isPrime(in)) {
+                System.out.println("Primo!");
+            } else {
+                System.out.println("Não primo!");
+            }
         }
 
         sc.close();
+    }
+
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if(n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

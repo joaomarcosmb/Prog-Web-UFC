@@ -1,31 +1,20 @@
 package org.progweb.lista01;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Q21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<Integer> nums = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            System.out.printf("(%d) Digite um número inteiro: ", i + 1);
-            nums.add(sc.nextInt());
-        }
+        System.out.print("Digite uma string: ");
+        String strA = sc.nextLine();
 
-        ArrayList<Integer> even = new ArrayList<>();
-        ArrayList<Integer> odd = new ArrayList<>();
-        for (int num : nums) {
-            if (num % 2 == 0) {
-                even.add(num);
-            } else {
-                odd.add(num);
-            }
-        }
+        System.out.print("Digite uma string: ");
+        String strB = sc.nextLine();
 
-        System.out.println("Os números pares são: " + even.toString().replaceAll("[\\[\\]]", "") + ".");
-        System.out.println("O produto dos números digitados é " + odd.toString().replaceAll("[\\[\\]]", "") + ".");
-        System.out.println("Os números digitados foram " + nums.toString().replaceAll("[\\[\\]]", "") + ".");
+        System.out.printf("String A: %s (%d caracteres)", strA, strA.length());
+        System.out.printf("%nString B: %s (%d caracteres)", strB, strB.length());
+        System.out.println("\nAs strings são iguais? " + (strA.equals(strB) ? "Sim" : "Não"));
 
         sc.close();
     }

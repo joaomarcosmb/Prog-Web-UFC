@@ -6,15 +6,17 @@ public class Q22 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite uma string: ");
-        String strA = sc.nextLine();
+        System.out.print("Digite um número inteiro: ");
+        int a = sc.nextInt();
 
-        System.out.print("Digite uma string: ");
-        String strB = sc.nextLine();
+        String aStr = String.valueOf(a);
+        StringBuilder builder = new StringBuilder();
+        for (int i = aStr.length() - 1; i >= 0; i--) {
+            builder.append(aStr.charAt(i));
+        }
 
-        System.out.printf("String A: %s (%d caracteres)", strA, strA.length());
-        System.out.printf("%nString B: %s (%d caracteres)", strB, strB.length());
-        System.out.println("\nAs strings são iguais? " + (strA.equals(strB) ? "Sim" : "Não"));
+        a = Integer.parseInt(builder.toString());
+        System.out.println("Número invertido: " + a);
 
         sc.close();
     }

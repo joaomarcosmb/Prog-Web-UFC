@@ -2,7 +2,8 @@ package org.progweb.lista01;
 
 import java.util.Scanner;
 
-import static org.progweb.lista01.Q3.calcMean;
+import static org.progweb.lista01.utils.CalcMean.mean;
+import static org.progweb.lista01.utils.ScanToNumArray.toDoubleArray;
 
 public class Q8 {
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class Q8 {
 
         System.out.print("Digite as notas, separadas por vírgula (ex.: 2, 3.4, 4): ");
         String in = sc.nextLine();
-        double mean = calcMean(in);
+        double[] nums = toDoubleArray(in);
+        double mean = mean(nums);
 
         System.out.printf("A média aritmética simples das notas é: %.2f.", mean);
 
@@ -19,6 +21,8 @@ public class Q8 {
         } else {
             System.out.println("\nReprovado!");
         }
+
+        sc.close();
     }
 }
 
