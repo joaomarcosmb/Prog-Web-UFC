@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: bitnami/postgresql:16
+    container_name: ecommerce-postgres
+    environment:
+      - POSTGRESQL_DATABASE=ecommerce
+      - POSTGRESQL_USERNAME=smd
+      - POSTGRESQL_PASSWORD=ufc123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/bitnami/postgresql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+    postgres-data:
